@@ -10,8 +10,6 @@ public class SportObject {
     public String address;
     public LocalDate date;
 
-    SportObject() {}
-
     public SportObject(int id, String name, String subject, String address, LocalDate date) {
         this.id = id;
         this.name = name;

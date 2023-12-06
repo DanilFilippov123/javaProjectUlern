@@ -32,7 +32,7 @@ public class CsvUtils {
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        try (Reader reader = Files.newBufferedReader(filePath, Charset.forName("CP1251"))) {
+        try (Reader reader = Files.newBufferedReader(filePath)) {
             CsvToBean<CsvSportObjectBean> cb = new CsvToBeanBuilder<CsvSportObjectBean>(reader)
                     .withType(CsvSportObjectBean.class)
                     .build();
