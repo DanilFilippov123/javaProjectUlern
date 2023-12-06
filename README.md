@@ -1,5 +1,5 @@
 # Семестровый проект по Java. 3 Вариант
-=========
+
 Гистограмма кривая, но я не придумал как лучше
 <img src="https://github.com/DanilFilippov123/javaProjectUlern/assets/32510311/d718dac0-be84-4fdc-808a-eafee823df21" alt="Гистограмма" title="Гистограмма"><br>
 
