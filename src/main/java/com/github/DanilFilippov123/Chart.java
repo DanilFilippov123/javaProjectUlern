@@ -3,11 +3,9 @@ package com.github.DanilFilippov123;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.block.BlockBorder;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
-import org.jfree.chart.title.TextTitle;
 import org.jfree.chart.ui.ApplicationFrame;
 import org.jfree.chart.ui.RectangleInsets;
 import org.jfree.data.category.CategoryDataset;
@@ -15,7 +13,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.awt.*;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static com.github.DanilFilippov123.Main.groupSportObjectsByCityCount;
 
 public class Chart extends ApplicationFrame {
     public Chart(String title, List<SportObject> sportObjects) {
@@ -33,8 +32,7 @@ public class Chart extends ApplicationFrame {
     }
 
     public DefaultCategoryDataset toHistogramDataset(List<SportObject> sportObjects) {
-        var countByCity = sportObjects.stream()
-                .collect(Collectors.groupingBy(sportObject -> sportObject.subject, Collectors.counting()));
+        var countByCity = groupSportObjectsByCityCount(sportObjects);
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(String city : countByCity.keySet()) {
             dataset.addValue(countByCity.get(city), city, "Область");

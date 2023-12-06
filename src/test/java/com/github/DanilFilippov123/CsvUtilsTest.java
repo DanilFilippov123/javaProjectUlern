@@ -18,11 +18,6 @@ class CsvUtilsTest {
     }
 
     @Test
-    void readAllLines() {
-
-    }
-
-    @Test
     void readBeansCsv() {
         List<CsvSportObjectBean> rows = CsvUtils.readBeansCsv("w.csv");
         CsvSportObjectBean test1 = new CsvSportObjectBean(1,

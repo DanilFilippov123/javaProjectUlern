@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class SportObject {
-    public int id;
-    public String name;
+    public final int id;
+    public final String name;
     public String subject;
-    public String address;
-    public LocalDate date;
+    public final String address;
+    public final LocalDate date;
 
     public SportObject(int id, String name, String subject, String address, LocalDate date) {
         this.id = id;
@@ -42,4 +42,7 @@ public class SportObject {
     public int hashCode() {
         return Objects.hash(id, name, subject, address, date);
     }
+
+
+
 }
