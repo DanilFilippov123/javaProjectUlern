@@ -37,7 +37,7 @@ public class Chart extends ApplicationFrame {
                 .collect(Collectors.groupingBy(sportObject -> sportObject.subject, Collectors.counting()));
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(String city : countByCity.keySet()) {
-            dataset.addValue(countByCity.get(city), "A", city);
+            dataset.addValue(countByCity.get(city), city, "Область");
         }
         return dataset;
     }
@@ -51,14 +51,10 @@ public class Chart extends ApplicationFrame {
                 "Область",                   // x-axis label
                 "Количестов спортивных лбъектов",                // y-axis label
                 dataset);
-        chart.addSubtitle(new TextTitle("В доходе включен только " +
-                                        "заработок по основной работе"));
         chart.setBackgroundPaint(Color.white);
 
         CategoryPlot plot = (CategoryPlot) chart.getPlot();
 
-        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setDrawBarOutline(false);
         chart.getLegend().setFrame(BlockBorder.NONE);
