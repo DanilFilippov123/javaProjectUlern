@@ -18,7 +18,7 @@ import java.util.List;
 @SuppressWarnings("UnusedAssignment")
 public class CsvUtils {
 
-    public static final DateTimeFormatter csvDateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    public static final DateTimeFormatter csvDateFormat = DateTimeFormatter.ofPattern("d.M.yyyy");
 
     public static Path resourceFileNameToPath(String filename) throws URISyntaxException {
         return Paths.get(
